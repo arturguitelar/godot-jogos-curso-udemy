@@ -9,6 +9,7 @@ onready var player = get_node("Felpudo")
 onready var camera = get_node("Camera")
 onready var barrelsSpawner = get_node("BarrelsSpawner")
 onready var destroyBarrels = get_node("DestroyBarrels")
+onready var bar = get_node("Bar")
 
 # Referências de medida e posição utilizadas para criar e reposicionar os barris
 const HALF_SCREEN = 360
@@ -25,6 +26,10 @@ func _ready():
 	
 	# gerando barris
 	initBarrels()
+
+	# conectando um signal na barra para fazer o player
+	# perder quando a barra estiver vazia.
+	bar.connect("lose", self, "loseGame")
 
 # tratando evento de toque na tela utilizando a câmera
 func _input(event):
@@ -56,6 +61,10 @@ func _input(event):
 
 			# desce os barris
 			dropBarrels()
+
+			# adiciona um pouco de "tempo" na barra
+			# 0.014 = número arbitrário para o tamanho do "gomo" que é adicionado
+			bar.add(0.014)
 
 			if (hasEnemy()):
 				loseGame();
@@ -127,3 +136,4 @@ func dropBarrels():
 # Perde o jogo.
 func loseGame():
 	player.die()
+	bar.set_process(false)
