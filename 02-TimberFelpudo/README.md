@@ -10,3 +10,7 @@ Algumas idéias interessantes neste projeto:
 - Lógica de empilhamento dos barris.
 - Signals (sinais) personalizados.
 - CanvasLayer.
+
+### Timber Felpudo
+
+![Timber Felpudo](https://github.com/arturguitelar/godot-jogos-curso-udemy/blob/master/screenshots/01-timber-felpudo.JPG)

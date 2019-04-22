@@ -12,4 +12,4 @@ Versão Godot utizada para os projetos: v2.1
 
 ### Timber Felpudo
 
-![Timber Felpudo](https://github.com/arturguitelar/godot-jogos-curso-udemy/blob/master/screenshots/01-felpudo-fly.JPG)
+![Timber Felpudo](https://github.com/arturguitelar/godot-jogos-curso-udemy/blob/master/screenshots/01-timber-felpudo.JPG)
