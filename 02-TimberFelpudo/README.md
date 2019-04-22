@@ -9,3 +9,4 @@ Algumas idéias interessantes neste projeto:
 - Manipulação de propriedades dos nodes (nós) via código.
 - Lógica de empilhamento dos barris.
 - Signals (sinais) personalizados.
+- CanvasLayer.

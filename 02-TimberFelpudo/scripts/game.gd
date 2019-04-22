@@ -10,15 +10,22 @@ onready var camera = get_node("Camera")
 onready var barrelsSpawner = get_node("BarrelsSpawner")
 onready var destroyBarrels = get_node("DestroyBarrels")
 onready var bar = get_node("Bar")
+onready var scoreLabel = get_node("ScoreUI/ScoreLabel")
 
 # Referências de medida e posição utilizadas para criar e reposicionar os barris
 const HALF_SCREEN = 360
 const START_Y_POSITION = 1090
 const BARREL_HEIGHT = 172
 
+# Estados do game
+const PLAYING_GAME = 1
+const LOSE_GAME = 2
+
 var lastEnemy
 var barrelLeftGroup = "barrelLeftGroup"
 var barrelRightGroup = "barrelRightGroup"
+var score = 0
+var state = PLAYING_GAME
 
 func _ready():
 	randomize()
@@ -35,7 +42,7 @@ func _ready():
 func _input(event):
 	event = camera.make_input_local(event)
 	
-	if (event.type == InputEvent.SCREEN_TOUCH and event.pressed):
+	if (event.type == InputEvent.SCREEN_TOUCH and event.pressed and state == PLAYING_GAME):
 		# se está tocando do lado esquerdo bota o player na esquerda
 		if (event.pos.x < 360):
 			player.toLeft()
@@ -65,6 +72,10 @@ func _input(event):
 			# adiciona um pouco de "tempo" na barra
 			# 0.014 = número arbitrário para o tamanho do "gomo" que é adicionado
 			bar.add(0.014)
+
+			# adicionando pontos ao score
+			score += 1
+			scoreLabel.set_text(str(score))
 
 			if (hasEnemy()):
 				loseGame();
@@ -133,7 +144,13 @@ func dropBarrels():
 	for b in barrelsSpawner.get_children():
 		b.set_pos(b.get_pos() + Vector2(0, 172))
 
-# Perde o jogo.
+# Fim de jogo.
 func loseGame():
 	player.die()
 	bar.set_process(false)
+	state = LOSE_GAME
+	get_node("Timer").start()
+
+# Na cena há um contador para reiniciar o game quando o player perder.
+func _on_Timer_timeout():
+	get_tree().reload_current_scene()
