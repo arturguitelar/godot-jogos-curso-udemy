@@ -131,7 +131,7 @@ script/script = ExtResource( 3 )
 transform/scale = Vector2( 1.4, 1.4 )
 frames = SubResource( 3 )
 animation = "default"
-frame = 5
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Felpudo"]
