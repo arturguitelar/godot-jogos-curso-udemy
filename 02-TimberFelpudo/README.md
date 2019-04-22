@@ -13,4 +13,4 @@ Algumas idéias interessantes neste projeto:
 
 ### Timber Felpudo
 
-![Timber Felpudo](https://github.com/arturguitelar/godot-jogos-curso-udemy/blob/master/screenshots/01-timber-felpudo.JPG)
+![Timber Felpudo](https://github.com/arturguitelar/godot-jogos-curso-udemy/blob/master/screenshots/02-timber-felpudo.JPG)
