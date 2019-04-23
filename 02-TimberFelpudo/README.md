@@ -5,6 +5,8 @@ Se possível, vai lá e [compra o curso na Udemy](https://www.udemy.com/criacao-
 
 O objetivo do game é bater em barris e evitar os barris que contenham inimigos.
 
+Neste game, eu resolvi seguir a regra de nomenclatura das variáveis e métodos em inglês. Também modifiquei o nome de um ou outro método para um nome que fazia mais sentido pra mim no momento. Há também comentários de minha autoria para facilitar o entendimento do código.
+
 Algumas idéias interessantes neste projeto:
 - Eventos de toque na tela detectando de qual lado o toque acontece.
 - Manipulação de propriedades dos nodes (nós) via código.
