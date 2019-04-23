@@ -8,7 +8,7 @@ Todos os jogos aqui podem ser usados como fonte de estudo. Você pode olhar o c�
 Se possível, vai lá e [compra o curso na Udemy](https://www.udemy.com/criacao-de-jogos-para-android-curso-completo). =]
 
 
-#### Aviso
+**Aviso:**
 
 Nem todos os códigos estão idênticos aos do curso. Eu resolvi adaptar algumas coisas pelo meio do caminho.
 
@@ -16,9 +16,9 @@ O nomes das variáveis e métodos, por exemplo, eu resolvi colocar os que faziam
 
 Como a intenção é utilizar para estudo, os comentários serão todos em português-br.
 
-Quando tiver uma mudança muito grande eu colocarei a especificação no README.md de cada projeto.
+Quando tiver uma mudança muito grande entre o exercício e o código aqui apresentado eu explicarei sobre no README.md de cada projeto.
 
-Versão Godot utizada para os projetos: v2.1
+- Versão Godot utizada para os projetos: **v2.1**
 
 ### Felpudo Fly
 
