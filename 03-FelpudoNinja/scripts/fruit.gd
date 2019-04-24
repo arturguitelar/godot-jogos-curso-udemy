@@ -4,11 +4,11 @@ const SCREEN_HEIGHT = 800
 
 # referêcias para os nodes da cena
 onready var shape = get_node("Shape")
-onready var sprite0 = get_node("Sprite0")
-onready var body1 = get_node("Body1")
-onready var body2 = get_node("Body2")
-onready var sprite1 = body1.get_node("Sprite1")
-onready var sprite2 = body2.get_node("Sprite2")
+onready var sprite_full = get_node("SpriteFull")
+onready var piece_left = get_node("PieceLeft")
+onready var piece_right = get_node("PieceRight")
+onready var sprite_left = piece_left.get_node("SpriteLeft")
+onready var sprite_right = piece_right.get_node("SpriteRight")
 
 var fruit_cut = false
 
@@ -30,7 +30,7 @@ func _process(delta):
 		
 	# se a fruta "partida" passou da parte inferior da tela
 	# os pontos ja foram contabilizados então a fruta é excluída
-	if body1.get_pos().y > SCREEN_HEIGHT and body2.get_pos().y > SCREEN_HEIGHT:
+	if piece_left.get_pos().y > SCREEN_HEIGHT and piece_right.get_pos().y > SCREEN_HEIGHT:
 		print("free!")
 		queue_free()
 # Cria uma fruta em uma posição delimitada e "joga" ela pra cima.
@@ -64,17 +64,17 @@ func cut():
 	emit_signal("score")
 	
 	# elimina a fruta "inteira"
-	sprite0.queue_free()
+	sprite_full.queue_free()
 	shape.queue_free()
 	
 	# e os dois pedaços da fruta caem
 	# o lado esquerdo sai rotacionado para a esquerda e o direito para a direita
-	body1.set_mode(MODE_RIGID)
-	body2.set_mode(MODE_RIGID)
-	body1.apply_impulse(Vector2(0, 0), Vector2(-100, 0).rotated(get_rot()))
-	body2.apply_impulse(Vector2(0, 0), Vector2(100, 0).rotated(get_rot()))
-	body1.set_angular_velocity(get_angular_velocity())
-	body2.set_angular_velocity(get_angular_velocity())
+	piece_left.set_mode(MODE_RIGID)
+	piece_right.set_mode(MODE_RIGID)
+	piece_left.apply_impulse(Vector2(0, 0), Vector2(-100, 0).rotated(get_rot()))
+	piece_right.apply_impulse(Vector2(0, 0), Vector2(100, 0).rotated(get_rot()))
+	piece_left.set_angular_velocity(get_angular_velocity())
+	piece_right.set_angular_velocity(get_angular_velocity())
 	
 
 func _on_Timer_timeout():
