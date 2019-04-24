@@ -71,6 +71,8 @@ func cut():
 	# o lado esquerdo sai rotacionado para a esquerda e o direito para a direita
 	piece_left.set_mode(MODE_RIGID)
 	piece_right.set_mode(MODE_RIGID)
+	piece_left.set_hidden(false)
+	piece_right.set_hidden(false)
 	piece_left.apply_impulse(Vector2(0, 0), Vector2(-100, 0).rotated(get_rot()))
 	piece_right.apply_impulse(Vector2(0, 0), Vector2(100, 0).rotated(get_rot()))
 	piece_left.set_angular_velocity(get_angular_velocity())

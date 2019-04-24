@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scripts/fruit.gd" type="Script" id=1]
-[ext_resource path="res://assets/Pear_Idle0001.png" type="Texture" id=2]
+[ext_resource path="res://assets/Banana_Idle0001.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -73,7 +73,7 @@ transform/pos = Vector2( -35, 0 )
 transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 0, 0, 234, 474 )
+region_rect = Rect2( 0, 0, 240, 488 )
 
 [node name="PieceRight" type="RigidBody2D" parent="."]
 
@@ -103,7 +103,7 @@ transform/pos = Vector2( 35, 0 )
 transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 234, 0, 234, 474 )
+region_rect = Rect2( 237, 0, 234, 488 )
 
 [node name="Timer" type="Timer" parent="."]
 
