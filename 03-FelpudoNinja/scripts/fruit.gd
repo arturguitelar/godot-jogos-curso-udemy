@@ -18,13 +18,11 @@ signal life
 func _ready():
 	randomize()
 	set_process(true)
-	spawn(Vector2(640, 640))
 
 func _process(delta):
 	# se a fruta "inteira" passou da parte inferior da tela
 	# o player perde life e a fruta é excluída
 	if get_pos().y > SCREEN_HEIGHT:
-		print("perdeu")
 		emit_signal("life")
 		queue_free()
 		
@@ -77,7 +75,3 @@ func cut():
 	piece_right.apply_impulse(Vector2(0, 0), Vector2(100, 0).rotated(get_rot()))
 	piece_left.set_angular_velocity(get_angular_velocity())
 	piece_right.set_angular_velocity(get_angular_velocity())
-	
-
-func _on_Timer_timeout():
-	cut()
