@@ -25,7 +25,6 @@ func _on_Generator_timeout():
 	for i in range(0, rand_range(1, 4)):
 		# o tipo do objeto gerado varia entre 0 e 7 para uma fruta e 8 para uma bomba
 		var type = int(rand_range(0, 9))
-		print(type)
 		var obj = getObj(type)
 		
 		obj.spawn(Vector2(rand_range(200, 1080), 800))

@@ -29,8 +29,8 @@ func _process(delta):
 	# se a fruta "partida" passou da parte inferior da tela
 	# os pontos ja foram contabilizados então a fruta é excluída
 	if piece_left.get_pos().y > SCREEN_HEIGHT and piece_right.get_pos().y > SCREEN_HEIGHT:
-		print("free!")
 		queue_free()
+	
 # Cria uma fruta em uma posição delimitada e "joga" ela pra cima.
 # A fruta fará uma parábola que muda dependendo da relação da posição
 # em que ela surgiu com o lado esquerdo ou direito da tela.

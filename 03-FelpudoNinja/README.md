@@ -9,3 +9,7 @@ Esta demonstração é um clone do famoso Fruit Ninja.
 - troquei os nomes das variáveis no script da fruta e também nos nodes do arquivo de scene da fruta.
 - os "pedaços" da fruta agora começam com visibilidade hidden e só depois que a fruta é "cortada" que o código muda a visibilidade para true.
 - na parte em que gera as frutas aleatoriamente, resolvi separar a lógica que retorna uma fruta de acordo com o número passado em uma função chamada getObj. Essa decisão foi apenas para separação de escopo e o resultado é o mesmo do exercício.
+
+**Coisas interessantes aprendidas durante este módulo:**
+- Raycast.
+- Utilidade do _fixed_process().
