@@ -13,6 +13,7 @@ var pineapple = preload("res://scenes//pineapple.tscn")
 var tomato = preload("res://scenes//tomato.tscn")
 var watermelon = preload("res://scenes//watermelon.tscn")
 
+# referência para a bomba
 var bomb = preload("res://scenes//bomb.tscn")
 
 func _ready():

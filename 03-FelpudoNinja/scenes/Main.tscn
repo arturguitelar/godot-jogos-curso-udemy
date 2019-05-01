@@ -26,6 +26,7 @@ autostart = true
 
 [node name="InputProcessor" type="Node2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 3 )
 
 [node name="IntervalBetweenRaycasts" type="Timer" parent="InputProcessor"]
