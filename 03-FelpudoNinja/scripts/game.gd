@@ -7,6 +7,7 @@ onready var bomb_1 = get_node("Control/Bomb1")
 onready var bomb_2 = get_node("Control/Bomb2")
 onready var bomb_3 = get_node("Control/Bomb3")
 onready var input_processor = get_node("InputProcessor")
+onready var game_over_screen = get_node("GameOverScreen")
 
 # referências para as frutas
 var avocado = preload("res://scenes//avocado.tscn")
@@ -74,10 +75,10 @@ func getObj(type):
 func dec_life():
 	lifes -= 1
 	
-	if lifes <= 0: 
+	if lifes == 0: 
 		input_processor.endgame = true
-		
 		bomb_1.set_modulate(Color(1, 0, 0))
+		game_over_screen.start()
 	
 	# modificando os outros marcadores de vida (bombas na direita da tela)
 	if lifes == 2: bomb_3.set_modulate(Color(1, 0, 0))
