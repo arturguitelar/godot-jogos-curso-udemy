@@ -11,6 +11,8 @@ var drag = false
 var current_touch_position = Vector2(0,0)
 var previous_touch_position = Vector2(0,0)
 
+var endgame = false
+
 func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
@@ -23,7 +25,7 @@ func _fixed_process(delta):
 	# a posição do toque e se o player está arrastando o dedo.
 	# Então é preciso avaliar se existe algum objeto neste "caminho"
 	# percorrido pelo arrastar de dedo.
-	if drag and current_touch_position != previous_touch_position and previous_touch_position != Vector2(0,0):
+	if can_draw():
 		# armazena o "caminho" do arrastar de dedo na tela
 		var space_state = get_world_2d().get_direct_space_state()
 		var result = space_state.intersect_ray(previous_touch_position, current_touch_position)
@@ -80,5 +82,9 @@ func _on_TouchLimit_timeout():
 
 func _draw():
 	# Verifica o rastro de dedo na tela para criar uma linha, simulando o "corte"
-	if drag and current_touch_position != previous_touch_position and previous_touch_position != Vector2(0,0):
+	if can_draw():
 		draw_line(current_touch_position, previous_touch_position, Color(1, 0, 0), 10)
+
+# verifica se o rastro pode ser desenhado na tela
+func can_draw():
+	return drag and current_touch_position != previous_touch_position and previous_touch_position != Vector2(0,0) and not endgame
